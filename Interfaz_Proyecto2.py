@@ -53,11 +53,17 @@ def Leer1():
         G1.config(image=BG1)
         G2.config(command=Leer2)
         G3.config(command=Leer3)
+        R1.config(command=Enviar1)
+        R2.config(command=Enviar2)
+        R3.config(command=Enviar3)
     else:
         lectura1 = True
         G1.config(image=Stop)
         G2.config(command=Error)
         G3.config(command=Error)
+        R1.config(command=Error)
+        R2.config(command=Error)
+        R3.config(command=Error)
         
     while(lectura1):
         print("Leyendo1")
@@ -71,11 +77,17 @@ def Leer2():
         G2.config(image=BG2)
         G1.config(command=Leer1)
         G3.config(command=Leer3)
+        R1.config(command=Enviar1)
+        R2.config(command=Enviar2)
+        R3.config(command=Enviar3)
     else:
         lectura2 = True
         G2.config(image=Stop)
         G1.config(command=Error)
         G3.config(command=Error)
+        R1.config(command=Error)
+        R2.config(command=Error)
+        R3.config(command=Error)
         
     while(lectura2):
         print("Leyendo2")
@@ -89,11 +101,17 @@ def Leer3():
         G3.config(image=BG3)
         G1.config(command=Leer1)
         G2.config(command=Leer2)
+        R1.config(command=Enviar1)
+        R2.config(command=Enviar2)
+        R3.config(command=Enviar3)
     else:
         lectura3 = True
         G3.config(image=Stop)
         G1.config(command=Error)
         G2.config(command=Error)
+        R1.config(command=Error)
+        R2.config(command=Error)
+        R3.config(command=Error)
         
     while(lectura3):
         print("Leyendo3")

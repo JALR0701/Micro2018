@@ -29,36 +29,37 @@ Main.geometry('%dx%d+%d+%d' % (w, h, x, y))
 Main.resizable(0,0)
 Main. config (background = "Black")
 
-Receive1 = "Ángulo del servo 1"
-Receive2 = "Ángulo del servo 2"
-Receive3 = "Ángulo del servo 3"
-Receive4 = "Ángulo del servo 4"
-
-Datos = Label(Main, text = "Autores: Daniel Fuentes y Jorge Lorenzana \nCarné: 17083 y 17302 \n", fg = "White", background = "Black")
+Datos = Label(Main, text = "Autores: Daniel Fuentes y Jorge Lorenzana \nCarnés: 17083 y 17302 \n", fg = "White", background = "Black")
 Datos.pack()
 
-Servo1 = Label(Main, text = "Servo 1", fg = "White", background = "Black")
-Servo1.place (relx=0.2, rely=0.25, anchor=CENTER)
+Rutina = []
 
-Angulo1 = Label(Main, text = Receive1, borderwidth=1, relief="solid", fg = "White", background = "Black")
-Angulo1.place (relx=0.2, rely=0.3, anchor=CENTER)
+##Vin = None
+##Pic.reset_input_buffer()
+##time.sleep(.1)
+##while(Vin is None):
+##    Vin = Pic.readline(1)
+##Vin = ord(Vin)
+lectura = False
 
-Servo2 = Label(Main, text = "Servo 2", fg = "White", background = "Black")
-Servo2.place (relx=0.4, rely=0.25, anchor=CENTER)
+def serialR():
+    global lectura
+    if(lectura):
+        lectura = False
+        print("False")
+    else:
+        lectura = True
+        print("True")
+        
+    while(lectura):
+        print("Leyendo")
+        Main.update()
+    return
 
-Angulo2 = Label(Main, text = Receive2, borderwidth=1, relief="solid", fg = "White", background = "Black")
-Angulo2.place (relx=0.4, rely=0.3, anchor=CENTER)
 
-Servo3 = Label(Main, text = "Servo 3", fg = "White", background = "Black")
-Servo3.place (relx=0.6, rely=0.25, anchor=CENTER)
+button = Button(Main, command = serialR).pack()
 
-Angulo3 = Label(Main, text = Receive3, borderwidth=1, relief="solid", fg = "White", background = "Black")
-Angulo3.place (relx=0.6, rely=0.3, anchor=CENTER)
 
-Servo4 = Label(Main, text = "Servo 4", fg = "White", background = "Black")
-Servo4.place (relx=0.8, rely=0.25, anchor=CENTER)
+while True:
+    Main.update()
 
-Angulo4 = Label(Main, text = Receive4, borderwidth=1, relief="solid", fg = "White", background = "Black")
-Angulo4.place (relx=0.8, rely=0.3, anchor=CENTER)
-
-Main.mainloop()
